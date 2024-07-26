@@ -1,20 +1,37 @@
-// Countdown Timer
-const countdown = () => {
-    const countDate = new Date('August 1, 2024 00:00:00').getTime();
-    const now = new Date().getTime();
-    const gap = countDate - now;
+// Función para iniciar el contador
+function startCountdown() {
+    // Fecha de destino para el contador
+    var countDownDate = new Date("Aug 1, 2024 00:00:00").getTime();
+    
+    // Actualizar el contador cada 1 segundo
+    var x = setInterval(function() {
+        // Obtener la fecha y hora actual
+        var now = new Date().getTime();
 
-    const second = 1000;
-    const minute = second * 60;
-    const hour = minute * 60;
-    const day = hour * 24;
+        // Calcular la diferencia entre ahora y la fecha de destino
+        var distance = countDownDate - now;
 
-    const textDay = Math.floor(gap / day);
-    const textHour = Math.floor((gap % day) / hour);
-    const textMinute = Math.floor((gap % hour) / minute);
-    const textSecond = Math.floor((gap % minute) / second);
+        // Calcular el tiempo restante en días, horas, minutos y segundos
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.querySelector('.countdown').innerText = `${textDay} DAYS ${textHour}:${textMinute}:${textSecond}`;
-};
+        // Formatear con ceros iniciales si es necesario
+        hours = ("0" + hours).slice(-2);
+        minutes = ("0" + minutes).slice(-2);
+        seconds = ("0" + seconds).slice(-2);
 
-setInterval(countdown, 1000);
+        // Mostrar el resultado en el elemento con id="countdown"
+        document.getElementById("countdown").innerHTML = days + " DAYS " + hours + ":" + minutes + ":" + seconds;
+
+        // Si la cuenta atrás ha terminado, mostrar un mensaje
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdown").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+}
+
+// Iniciar el contador al cargar la página
+window.onload = startCountdown;

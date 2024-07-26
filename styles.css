@@ -173,7 +173,8 @@ footer {
     color: #fff;
     z-index: 2;
     background-color: rgba(0, 17, 95, 0.5);
-    padding: 10px 0;
+    padding: 20px 0; /* Aumentar el espacio superior e inferior */
+    margin-top: 20px; /* Agregar espacio arriba del footer */
 }
 
 .footer-content .line {
