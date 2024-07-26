@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 17, 95, 0.5);
+    z-index: 1;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    background-color: rgba(0, 17, 95, 0.5);
+    border-bottom: 2px solid #fff;
+    padding: 10px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.contact-info {
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info i {
+    margin-right: 8px;
+}
+
+.contact-info a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.social-media {
+    display: flex;
+    gap: 10px;
+}
+
+.social-media i {
+    font-size: 24px;
+    color: #fff;
+}
+
+.logo {
+    width: 360px;
+    height: auto;
+    margin: 20px 0; /* Agregar espacio superior e inferior */
+}
+
+.content {
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    margin-top: 80px; /* Ajustar margen superior para más separación en pantallas grandes */
+}
+
+.countdown {
+    font-size: 48px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+p {
+    margin-bottom: 40px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en una nueva línea si es necesario */
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-align: center; /* Centra el texto dentro del input */
+}
+
+.contact-form .form-group input {
+    max-width: 250px;
+    width: 100%;
+}
+
+.contact-form textarea {
+    max-width: 520px;
+    width: 100%;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000000;
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 150px;
+    margin: 0 auto;
+}
+
+video#backgroundVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+    background-color: rgba(0, 17, 95, 0.5);
+    padding: 10px 0;
+}
+
+.footer-content .line {
+    display: none;
+}
+
+.footer-content {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+.footer-content a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+.footer-content .line2 {
+    display: none;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px;
+        margin-top: 25px; /* Ajusta margen superior para más separación en pantallas pequeñas */
+    }
+
+    .countdown {
+        font-size: 36px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        max-width: 100%;
+    }
+
+    .contact-form .form-group {
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .contact-form .form-group input {
+        max-width: 48%; /* Ajustar ancho máximo en pantallas pequeñas */
+    }
+
+    .contact-form button {
+        width: 150px; /* Asegura que el botón no ocupe todo el ancho */
+    }
+
+    .social-media i {
+        font-size: 20px;
+    }
+
+    .logo {
+        width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .countdown {
+        font-size: 28px;
+    }
+
+    .contact-form button {
+        width: 150px; /* Asegura que el botón no ocupe todo el ancho en pantallas pequeñas */
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        max-width: 100%;
+        padding: 8px;
+    }
+
+    .contact-form .form-group {
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .contact-form .form-group input {
+        max-width: 48%; /* Ajustar ancho máximo en pantallas pequeñas */
+    }
+
+    .social-media i {
+        font-size: 16px;
+    }
+
+    .logo {
+        width: 150px;
+    }
+}
